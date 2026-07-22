@@ -92,6 +92,8 @@
     padding: 1.2rem 1.4rem;
     width: 15.5rem;
     text-align: left;
+    display: flex;
+    flex-direction: column;
   }
   .carte h2 {
     font-family: 'Fraunces', serif;
@@ -104,10 +106,12 @@
     font-size: 0.88rem;
     color: var(--ardoise);
     line-height: 1.55;
+    margin-bottom: 0.9rem;
   }
   .carte .etat {
     display: inline-block;
-    margin-top: 0.6rem;
+    margin-top: auto;
+    align-self: flex-start;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
     color: var(--or);
@@ -157,7 +161,7 @@
   <div class="univers">
     <div class="carte">
       <h2>Applications</h2>
-      <p>Des applications simples et utiles, pensées pour le quotidien : hors ligne, sans compte et respectueuses de votre vie privée.</p>
+      <p>Des applications simples et utiles, pensées pour le quotidien. Hors ligne, sans compte, respectueuses de votre vie privée.</p>
       <span class="etat">Bientôt sur Google Play</span>
     </div>
     <div class="carte">
