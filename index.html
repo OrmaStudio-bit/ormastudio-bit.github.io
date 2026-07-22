@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orma Studio</title>
-<meta name="description" content="Orma Studio édite des applications qui simplifient la France compliquée. Éditeur de MonLitige.">
+<meta name="description" content="Orma Studio, éditeur français indépendant : applications, musique et contenus audiovisuels. Éditeur de MonLitige et créateur de l'univers Badoum.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,540&family=Archivo:wght@400;500&display=swap" rel="stylesheet">
@@ -72,12 +72,51 @@
     margin-top: 1.4rem;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: var(--ardoise);
-    max-width: 34ch;
+    max-width: 40ch;
     line-height: 1.6;
     position: relative;
   }
+  .univers {
+    margin-top: 2.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    max-width: 52rem;
+  }
+  .carte {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(27, 58, 92, 0.12);
+    border-radius: 0.9rem;
+    padding: 1.2rem 1.4rem;
+    width: 15.5rem;
+    text-align: left;
+  }
+  .carte h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 540;
+    font-size: 1.15rem;
+    color: var(--bleu);
+    margin-bottom: 0.35rem;
+  }
+  .carte p {
+    font-size: 0.88rem;
+    color: var(--ardoise);
+    line-height: 1.55;
+  }
+  .carte .etat {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--or);
+    border: 1px solid var(--or);
+    border-radius: 2rem;
+    padding: 0.15rem 0.7rem;
+  }
   .contact {
-    margin-top: 3rem;
+    margin-top: 2.8rem;
     position: relative;
   }
   .contact a {
@@ -113,7 +152,26 @@
     <path d="M -50 470 C 250 430, 420 330, 600 300 C 780 270, 950 170, 1250 130" />
   </svg>
   <h1 class="marque">Orma<br><span class="studio">Studio</span></h1>
-  <p class="devise">Des applications qui simplifient la France compliquée.</p>
+  <p class="devise">Éditeur français indépendant. Applications, musique et contenus audiovisuels.</p>
+
+  <div class="univers">
+    <div class="carte">
+      <h2>Applications</h2>
+      <p>Des applications simples et utiles, pensées pour le quotidien : hors ligne, sans compte et respectueuses de votre vie privée.</p>
+      <span class="etat">Bientôt sur Google Play</span>
+    </div>
+    <div class="carte">
+      <h2>Badoum</h2>
+      <p>Comptines et univers animé pour les tout-petits. Des personnages hauts en couleur, en musique et en vidéo.</p>
+      <span class="etat">Sur YouTube</span>
+    </div>
+    <div class="carte">
+      <h2>Orma Studio Official</h2>
+      <p>Production originale du studio : titres, textes et visuels. Un label indépendant qui suit son sillage.</p>
+      <span class="etat">À venir</span>
+    </div>
+  </div>
+
   <div class="contact">
     <a href="mailto:contact@orma-studio.fr">contact@orma-studio.fr</a>
   </div>
@@ -121,7 +179,7 @@
 <footer>
   Orma Studio, SASU au capital de 500 € - 107 393 316 RCS Paris<br>
   142 rue de Rivoli, 75001 Paris ·
-  <a href="confidentialite.html">Politique de confidentialité de MonLitige</a>
+  <a href="confidentialite.html">Politique de confidentialité</a>
 </footer>
 </body>
 </html>
