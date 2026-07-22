@@ -111,13 +111,20 @@
   .carte .etat {
     display: inline-block;
     margin-top: auto;
-    align-self: flex-start;
+    align-self: center;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
     color: var(--or);
     border: 1px solid var(--or);
     border-radius: 2rem;
     padding: 0.15rem 0.7rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  a.etat:hover, a.etat:focus-visible {
+    background: var(--or);
+    color: var(--creme);
+    outline: none;
   }
   .contact {
     margin-top: 2.8rem;
@@ -167,12 +174,12 @@
     <div class="carte">
       <h2>Badoum</h2>
       <p>Comptines et univers animé pour les tout-petits. Des personnages hauts en couleur, en musique et en vidéo.</p>
-      <span class="etat">Sur YouTube</span>
+      <a class="etat" href="https://www.youtube.com/@BadoumComptines" rel="noopener">Sur YouTube</a>
     </div>
     <div class="carte">
       <h2>Orma Studio Official</h2>
       <p>Production originale du studio : titres, textes et visuels. Un label indépendant qui suit son sillage.</p>
-      <span class="etat">À venir</span>
+      <a class="etat" href="https://www.youtube.com/@OrmaStudioOfficial" rel="noopener">Sur YouTube</a>
     </div>
   </div>
 
