@@ -12,6 +12,7 @@
 <meta property="og:image" content="https://orma-studio.fr/icone-512.png">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#060709">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,151 +21,139 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,540&family=Archivo:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bleu: #1B3A5C;
-    --creme: #F7F5F0;
-    --or: #C8A45C;
-    --encre: #22303C;
-    --ardoise: #5A6B7D;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--creme);
-    color: var(--encre);
-    font-family: 'Archivo', system-ui, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 3rem 1.5rem;
-    position: relative;
-    overflow-x: clip;
-  }
-  /* Le sillage : l'empreinte (orma) qui traverse la page */
-  .sillage {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-  .sillage path {
-    fill: none;
-    stroke: var(--or);
-    stroke-width: 1.5;
-    opacity: 0.55;
-    stroke-dasharray: 2400;
-    stroke-dashoffset: 2400;
-    animation: tracer 2.8s ease-out 0.3s forwards;
-  }
-  @keyframes tracer { to { stroke-dashoffset: 0; } }
-  @media (prefers-reduced-motion: reduce) {
-    .sillage path { animation: none; stroke-dashoffset: 0; }
-  }
-  .marque {
-    font-family: 'Fraunces', serif;
-    font-weight: 540;
-    font-size: clamp(2.6rem, 8vw, 4.8rem);
-    letter-spacing: 0.12em;
-    color: var(--bleu);
-    text-transform: uppercase;
-    position: relative;
-  }
-  .marque .studio { color: var(--or); }
-  .devise {
-    margin-top: 1.4rem;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: var(--ardoise);
-    max-width: 40ch;
-    line-height: 1.6;
-    position: relative;
-  }
-  .univers {
-    margin-top: 2.8rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    position: relative;
-    max-width: 52rem;
-  }
-  .carte {
-    background: rgba(255, 255, 255, 0.55);
-    border: 1px solid rgba(27, 58, 92, 0.12);
-    border-radius: 0.9rem;
-    padding: 1.2rem 1.4rem;
-    width: 15.5rem;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-  }
-  .carte h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 540;
-    font-size: 1.15rem;
-    color: var(--bleu);
-    margin-bottom: 0.35rem;
-  }
-  .carte p {
-    font-size: 0.88rem;
-    color: var(--ardoise);
-    line-height: 1.55;
-    margin-bottom: 0.9rem;
-  }
-  .carte .etat {
-    display: inline-block;
-    margin-top: auto;
-    align-self: center;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    color: var(--or);
-    border: 1px solid var(--or);
-    border-radius: 2rem;
-    padding: 0.15rem 0.7rem;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-  a.etat:hover, a.etat:focus-visible {
-    background: var(--or);
-    color: var(--creme);
-    outline: none;
-  }
-  .contact {
-    margin-top: 2.8rem;
-    position: relative;
-  }
-  .contact a {
-    display: inline-block;
-    font-size: 0.95rem;
-    letter-spacing: 0.04em;
-    color: var(--bleu);
-    text-decoration: none;
-    border: 1px solid var(--bleu);
-    padding: 0.75rem 1.6rem;
-    border-radius: 2rem;
-    transition: background 0.2s, color 0.2s;
-  }
-  .contact a:hover, .contact a:focus-visible {
-    background: var(--bleu);
-    color: var(--creme);
-    outline: none;
-  }
-  .contact a:focus-visible { box-shadow: 0 0 0 3px var(--or); }
-  footer {
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 0.78rem;
-    line-height: 1.7;
-    color: var(--ardoise);
-  }
-  footer a { color: var(--ardoise); }
+:root {
+  --noir: #060709;
+  --ecume: #EDE8DF;
+  --brume: #98A1AB;
+  --or: #D9A94E;
+  --or-clair: #F0C97E;
+  --bord: rgba(217, 169, 78, 0.22);
+  --surface: rgba(255, 255, 255, 0.045);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--noir);
+  color: var(--ecume);
+  font-family: 'Archivo', system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+  overflow-x: clip;
+  background: radial-gradient(ellipse 70% 45% at 50% 22%, rgba(217, 169, 78, 0.08), transparent 70%);
+}
+.marque {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.marque img {
+  width: min(92vw, 46rem);
+  height: auto;
+  opacity: 0;
+  animation: emerger 1.6s ease-out 0.2s forwards;
+}
+@keyframes emerger { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .marque img { animation: none; opacity: 1; }
+}
+.devise {
+  margin-top: 0.6rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--brume);
+  max-width: 40ch;
+  line-height: 1.6;
+  position: relative;
+}
+.univers {
+  margin-top: 2.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  max-width: 52rem;
+}
+.carte {
+  background: var(--surface);
+  border: 1px solid var(--bord);
+  border-radius: 0.9rem;
+  padding: 1.2rem 1.4rem;
+  width: 15.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.carte h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 540;
+  font-size: 1.15rem;
+  color: var(--or-clair);
+  margin-bottom: 0.35rem;
+}
+.carte p {
+  font-size: 0.88rem;
+  color: var(--brume);
+  line-height: 1.55;
+  margin-bottom: 0.9rem;
+}
+.carte .etat {
+  display: inline-block;
+  margin-top: auto;
+  align-self: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--or);
+  border: 1px solid var(--or);
+  border-radius: 2rem;
+  padding: 0.15rem 0.7rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+a.etat:hover, a.etat:focus-visible {
+  background: var(--or);
+  color: var(--noir);
+  outline: none;
+}
+.contact {
+  margin-top: 2.8rem;
+  position: relative;
+}
+.contact a {
+  display: inline-block;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--ecume);
+  text-decoration: none;
+  border: 1px solid var(--brume);
+  padding: 0.75rem 1.6rem;
+  border-radius: 2rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.contact a:hover, .contact a:focus-visible {
+  background: var(--or);
+  border-color: var(--or);
+  color: var(--noir);
+  outline: none;
+}
+.contact a:focus-visible { box-shadow: 0 0 0 3px var(--or-clair); }
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--brume);
+}
+footer a { color: var(--brume); }
 </style>
 <script type="application/ld+json">
 {
@@ -186,12 +175,8 @@
 </head>
 <body>
 <main>
-  <svg class="sillage" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M -50 470 C 250 430, 420 330, 600 300 C 780 270, 950 170, 1250 130" />
-  </svg>
-  <h1 class="marque">Orma<br><span class="studio">Studio</span></h1>
+  <h1 class="marque"><img src="orma-banniere.png" alt="Orma Studio" width="1640" height="319"></h1>
   <p class="devise">Éditeur français indépendant. Applications, musique et contenus audiovisuels.</p>
-
   <div class="univers">
     <div class="carte">
       <h2>Applications</h2>
@@ -209,7 +194,6 @@
       <a class="etat" href="https://www.youtube.com/@OrmaStudioOfficial" rel="noopener">Sur YouTube</a>
     </div>
   </div>
-
   <div class="contact">
     <a href="mailto:contact@orma-studio.fr">contact@orma-studio.fr</a>
   </div>
