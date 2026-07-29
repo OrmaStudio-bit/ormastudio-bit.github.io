@@ -107,19 +107,9 @@ main {
   88% { opacity: 1; }
   100% { opacity: 0; }
 }
-.voile .coeur { fill: #FFF6DF; }
-.voile .halo { fill: rgba(240, 201, 126, 0.35); }
-.voile .eclat {
-  fill: rgba(255, 244, 214, 0.9);
-  transform-box: fill-box;
-  transform-origin: center;
-  transform: scale(0);
-  animation: eclore 0.7s ease-out 1.75s forwards;
-}
-@keyframes eclore {
-  0% { transform: scale(0); opacity: 1; }
-  45% { transform: scale(1); opacity: 0.9; }
-  100% { transform: scale(1.6); opacity: 0; }
+.voile .coeur {
+  fill: #FFF6DF;
+  filter: drop-shadow(0 0 3px rgba(255, 246, 223, 0.9)) drop-shadow(0 0 8px rgba(240, 201, 126, 0.6));
 }
 @media (prefers-reduced-motion: reduce) {
   .calque-lettres, .calque-ligne { animation: none; opacity: 1; }
@@ -240,10 +230,8 @@ footer a { color: var(--brume); }
       <img class="calque-ligne" src="orma-banniere-ligne.png" alt="" aria-hidden="true" width="1640" height="319">
       <svg class="voile" viewBox="0 0 1640 319" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <path class="trace" pathLength="1" d="M300,232 Q530,184 810,179 Q1150,184 1520,272" />
-        <circle class="eclat" cx="810" cy="179" r="26" />
         <g class="etoile">
-          <circle class="halo" r="10" />
-          <circle class="coeur" r="3.5" />
+          <circle class="coeur" r="2" />
           <animateMotion dur="1.2s" begin="1.3s" fill="freeze"
             calcMode="spline" keySplines="0.3 0 0.5 1" keyTimes="0;1"
             path="M300,232 Q530,184 810,179 Q1150,184 1520,272" />
