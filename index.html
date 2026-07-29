@@ -56,15 +56,74 @@ main {
   display: flex;
   justify-content: center;
 }
-.marque img {
+.scene {
+  position: relative;
   width: min(92vw, 46rem);
+}
+.scene img {
+  display: block;
+  width: 100%;
   height: auto;
+}
+.calque-lettres {
   opacity: 0;
   animation: emerger 1.6s ease-out 0.2s forwards;
 }
+.calque-ligne {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: emerger 0.5s ease-out 2.5s forwards;
+}
 @keyframes emerger { to { opacity: 1; } }
+.voile {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  animation: retirer 0.6s ease-out 2.7s forwards;
+}
+@keyframes retirer { to { opacity: 0; } }
+.voile .trace {
+  fill: none;
+  stroke: var(--or-clair);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px rgba(240, 201, 126, 0.85));
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: tracer 1.2s cubic-bezier(0.3, 0, 0.5, 1) 1.3s forwards;
+}
+@keyframes tracer { to { stroke-dashoffset: 0; } }
+.voile .etoile {
+  opacity: 0;
+  animation: passage 1.2s linear 1.3s both;
+}
+@keyframes passage {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.voile .coeur { fill: #FFF6DF; }
+.voile .halo { fill: rgba(240, 201, 126, 0.35); }
+.voile .eclat {
+  fill: rgba(255, 244, 214, 0.9);
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  animation: eclore 0.7s ease-out 1.75s forwards;
+}
+@keyframes eclore {
+  0% { transform: scale(0); opacity: 1; }
+  45% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .marque img { animation: none; opacity: 1; }
+  .calque-lettres, .calque-ligne { animation: none; opacity: 1; }
+  .voile { display: none; }
 }
 .devise {
   margin-top: 0.6rem;
@@ -175,7 +234,23 @@ footer a { color: var(--brume); }
 </head>
 <body>
 <main>
-  <h1 class="marque"><img src="orma-banniere.png" alt="Orma Studio" width="1640" height="319"></h1>
+  <h1 class="marque">
+    <span class="scene">
+      <img class="calque-lettres" src="orma-banniere-lettres.png" alt="Orma Studio" width="1640" height="319">
+      <img class="calque-ligne" src="orma-banniere-ligne.png" alt="" aria-hidden="true" width="1640" height="319">
+      <svg class="voile" viewBox="0 0 1640 319" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path class="trace" pathLength="1" d="M300,232 Q530,184 810,179 Q1150,184 1520,272" />
+        <circle class="eclat" cx="810" cy="179" r="26" />
+        <g class="etoile">
+          <circle class="halo" r="10" />
+          <circle class="coeur" r="3.5" />
+          <animateMotion dur="1.2s" begin="1.3s" fill="freeze"
+            calcMode="spline" keySplines="0.3 0 0.5 1" keyTimes="0;1"
+            path="M300,232 Q530,184 810,179 Q1150,184 1520,272" />
+        </g>
+      </svg>
+    </span>
+  </h1>
   <p class="devise">Éditeur français indépendant. Applications, musique et contenus audiovisuels.</p>
   <div class="univers">
     <div class="carte">
